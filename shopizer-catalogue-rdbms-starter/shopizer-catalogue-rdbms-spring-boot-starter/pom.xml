@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.shopizer</groupId>
+		<artifactId>shopizer-catalogue-rdbms-starter</artifactId>
+		<version>2.17.0</version>
+	</parent>
+
+	<artifactId>shopizer-catalogue-rdbms-spring-boot-starter</artifactId>
+	<name>shopizer-catalogue-rdbms-spring-boot-starter</name>
+	<description>Shopizer RDBMS catalogue spring-boot starter</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.shopizer</groupId>
+			<artifactId>shopizer-catalogue-rdbms-starter-autoconfigure</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.shopizer</groupId>
+			<artifactId>sm-shop-model</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.shopizer/sm-core-modules -->
+		<dependency>
+			<groupId>com.shopizer</groupId>
+			<artifactId>sm-core-modules</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+
+</project>
