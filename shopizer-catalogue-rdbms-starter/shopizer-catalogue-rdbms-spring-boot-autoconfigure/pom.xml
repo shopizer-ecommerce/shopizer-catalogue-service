@@ -66,6 +66,13 @@
 			<version>2.16.0</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>com.shopizer</groupId>
+			<artifactId>shopizer-common</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/com.shopizer/sm-shop-model -->
 		<dependency>
 			<groupId>com.shopizer</groupId>
@@ -86,6 +93,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.springdoc</groupId>
+		    <artifactId>springdoc-openapi-ui</artifactId>
+		    <version>1.4.3</version>
+		</dependency>
+		<dependency>
+	      <groupId>org.springdoc</groupId>
+	      <artifactId>springdoc-openapi-security</artifactId>
+	      <version>1.4.3</version>
+	    </dependency>
+		
+		
 	</dependencies>
 
 	<build>

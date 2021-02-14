@@ -1,4 +1,6 @@
-## shopizer catalogue microservices ecosystem WIP
+## shopizer microservices ecosystem WIP
+
+TODO rename repo to shopizer-microservices
 
 ### Requirements
 
@@ -8,18 +10,24 @@ Java 8
 
 Contains the following:
 
+shopizer
+shopizer-model
 shopizer-catalogue-service
 shopizer-catalogue-pricing-service
 shopizer-catalogue-rdbms-starter
 
 ### Details
 
-shopizer-catalogue-service is a rest service
-shopizer-catalogue-pricing-service is a rest service
-shopizer-catalogue-service uses starter shopizer-catalogue-rdbms-starter for backend
+shopizer : parent BON
+shopizer-common : Common model and utility
+shopizer-catalogue-service : catalogend point
+shopizer-catalogue-pricing-service : catalog-pricing end point
+shopizer-catalogue-rdbms-starter : rdbms catalogue starter used by shopizer-catalogue-service
 
 ### From your IDE
 
+Import shopizer as maven project
+Import shopizer-common as maven project
 Import shopizer-catalogue-service as maven project
 Import shopizer-catalogue-pricing-service as maven project
 Import shopizer-catalogue-rdbms-starter as maven project
