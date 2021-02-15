@@ -12,7 +12,7 @@ IBD
 
 Catalogue microservice is the first candidate for microservice conversion
 
-![](img/microservices-catalogue.png)
+![](img/microservices-catalogue-shop.png)
 
 catalogue-service/shopizer-catalogue-service/shopizer-catalogue-rdbms-starter
 
