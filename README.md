@@ -8,12 +8,16 @@ Java 8
 
 Contains the following:
 
+shopizer
+shopizer-common
 shopizer-catalogue-service
 shopizer-catalogue-pricing-service
 shopizer-catalogue-rdbms-starter
 
 ### Details
 
+shopizer is parent
+shopizer-common common utility
 shopizer-catalogue-service is a rest service
 shopizer-catalogue-pricing-service is a rest service
 shopizer-catalogue-service uses starter shopizer-catalogue-rdbms-starter for backend
@@ -38,4 +42,10 @@ Please install Google code formatter
 
 https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml
 https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+
+### Project documentation
+
+[Microservices technical documentation](https://github.com/shopizer-ecommerce/shopizer-catalogue-service/blob/main/docs/index.md)
+
+
 
