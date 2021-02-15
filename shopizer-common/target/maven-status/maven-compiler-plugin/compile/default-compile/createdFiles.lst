@@ -1,0 +1,15 @@
+com/shopizer/db/references/zone/Zone.class
+com/shopizer/model/category/ReadableCategory.class
+com/shopizer/db/references/language/Language.class
+com/shopizer/db/audit/Auditable.class
+com/shopizer/model/category/CategoryModel.class
+com/shopizer/db/references/geozone/GeoZoneDescription.class
+com/shopizer/db/merchant/MerchantStore.class
+com/shopizer/model/common/ReadableDescription.class
+com/shopizer/db/references/country/CountryDescription.class
+com/shopizer/db/references/country/Country.class
+com/shopizer/db/description/Description.class
+com/shopizer/db/references/geozone/GeoZone.class
+com/shopizer/db/references/zone/ZoneDescription.class
+com/shopizer/db/SchemaConstants.class
+com/shopizer/db/references/currency/Currency.class

@@ -1,0 +1,15 @@
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/merchant/MerchantStore.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/zone/ZoneDescription.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/description/Description.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/audit/Auditable.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/model/common/ReadableDescription.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/zone/Zone.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/SchemaConstants.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/geozone/GeoZoneDescription.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/model/category/ReadableCategory.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/geozone/GeoZone.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/country/Country.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/language/Language.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/model/category/CategoryModel.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/country/CountryDescription.java
+/Users/carlsamson/Documents/dev/workspaces/shopizer-catalogue/shopizer-catalogue/shopizer-common/src/main/java/com/shopizer/db/references/currency/Currency.java
