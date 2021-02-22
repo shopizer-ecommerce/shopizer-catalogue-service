@@ -20,10 +20,6 @@
 		<java.version>1.8</java.version>
 		<shopizer.version>2.17.0</shopizer.version>
 		<spring-boot.version>2.3.6.RELEASE</spring-boot.version>
-
-		<!-- jacoco coverage -->
-		<coverage.lines>.10</coverage.lines>
-		<coverage.branches>.10</coverage.branches>
 	</properties>
 
 	<distributionManagement>

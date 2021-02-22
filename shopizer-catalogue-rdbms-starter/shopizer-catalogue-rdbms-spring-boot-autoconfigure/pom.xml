@@ -17,14 +17,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<shopizer.version>2.16.0</shopizer.version>
-
-		<!-- jacoco coverage -->
-		<coverage.lines>.10</coverage.lines>
-		<coverage.branches>.10</coverage.branches>
 	</properties>
 
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot</artifactId>
@@ -34,13 +31,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -58,28 +60,11 @@
 			<scope>compile</scope>
 		</dependency>
 
-
-		<!-- https://mvnrepository.com/artifact/com.shopizer/sm-core-modules -->
-		<dependency>
-			<groupId>com.shopizer</groupId>
-			<artifactId>sm-core-model</artifactId>
-			<version>2.16.0</version>
-		</dependency>
-
-
 		<dependency>
 			<groupId>com.shopizer</groupId>
 			<artifactId>shopizer-common</artifactId>
 			<version>3.0.0</version>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.shopizer/sm-shop-model -->
-		<dependency>
-			<groupId>com.shopizer</groupId>
-			<artifactId>sm-shop-model</artifactId>
-			<version>2.16.0</version>
-		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
 		<dependency>
@@ -88,24 +73,40 @@
 			<version>1.7</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.springdoc</groupId>
-		    <artifactId>springdoc-openapi-ui</artifactId>
-		    <version>1.4.3</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
-	      <groupId>org.springdoc</groupId>
-	      <artifactId>springdoc-openapi-security</artifactId>
-	      <version>1.4.3</version>
-	    </dependency>
-		
-		
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Oracle placeholder -->
+
+
 	</dependencies>
 
 	<build>

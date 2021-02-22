@@ -1,4 +1,4 @@
-package com.shopizer.services.catalogue.config;
+package com.shopizer.catalogue.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

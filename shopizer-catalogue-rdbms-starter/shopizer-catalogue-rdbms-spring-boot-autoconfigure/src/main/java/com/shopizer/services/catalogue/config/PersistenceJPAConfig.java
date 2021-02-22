@@ -13,8 +13,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories
 @EnableTransactionManagement
-@EnableJpaAuditing(auditorAwareRef = "auditorProvider")
-@EntityScan({"com.shopizer.db","com.shopizer.catalog.model"})
+//@EnableJpaAuditing(auditorAwareRef = "auditorProvider")
+@EnableJpaAuditing
+@EntityScan({"com.shopizer.db","com.shopizer.services.catalogue.model"})
 public class PersistenceJPAConfig {
 
 	/**
@@ -125,7 +126,7 @@ public class PersistenceJPAConfig {
 		 * with following code segment.
 		 * SecurityContextHolder.getContext().getAuthentication().getName()
 		 */
-		return () -> Optional.ofNullable("catalog");
+		return () -> Optional.ofNullable("catalogue");
 	}
 
 }
