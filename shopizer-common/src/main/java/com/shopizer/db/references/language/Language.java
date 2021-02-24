@@ -33,12 +33,6 @@ public class Language extends Auditable<String> implements Serializable {
   @Column(name = "SORT_ORDER")
   private Integer sortOrder;
 
-  //@OneToMany(mappedBy = "defaultLanguage", targetEntity = MerchantStore.class)
-  //private List<MerchantStore> storesDefaultLanguage;
-
-  //@ManyToMany(mappedBy = "languages", targetEntity = MerchantStore.class, fetch = FetchType.LAZY)
-  //private List<MerchantStore> stores = new ArrayList<MerchantStore>();
-
   public Language() {}
 
   public Language(String code) {

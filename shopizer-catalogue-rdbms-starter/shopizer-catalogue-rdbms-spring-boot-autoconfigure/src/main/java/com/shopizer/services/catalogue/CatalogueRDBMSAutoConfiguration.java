@@ -93,7 +93,7 @@ public class CatalogueRDBMSAutoConfiguration {
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
       final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
       em.setDataSource(dataSource());
-      em.setPackagesToScan("com.shopizer.services.catalogue");
+      em.setPackagesToScan("com.shopizer.services.catalogue","com.shopizer.db");
       em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
       if (additionalProperties() != null) {
           em.setJpaProperties(additionalProperties());

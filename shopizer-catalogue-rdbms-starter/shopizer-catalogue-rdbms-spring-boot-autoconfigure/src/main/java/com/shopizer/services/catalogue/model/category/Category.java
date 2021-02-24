@@ -10,11 +10,12 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import com.shopizer.db.audit.Auditable;
 
 
 @Entity
 @Table(name = "CATEGORY")
-public class Category implements Serializable {
+public class Category extends Auditable<String> implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Id
