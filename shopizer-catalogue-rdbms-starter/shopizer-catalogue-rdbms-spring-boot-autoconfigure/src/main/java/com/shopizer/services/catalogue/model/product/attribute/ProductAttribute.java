@@ -16,6 +16,8 @@ import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import com.shopizer.db.audit.Auditable;
 import com.shopizer.services.catalogue.model.product.Product;
+import com.shopizer.services.catalogue.model.product.options.ProductOption;
+import com.shopizer.services.catalogue.model.product.options.ProductOptionValue;
 import net.minidev.json.annotate.JsonIgnore;
 
 @Entity
