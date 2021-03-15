@@ -16,13 +16,12 @@ import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import com.shopizer.db.audit.Auditable;
 import com.shopizer.services.catalogue.model.product.Product;
-import com.shopizer.services.catalogue.model.product.options.ProductOption;
+import com.shopizer.services.catalogue.model.product.options.ProductOptionDescriptor;
 import com.shopizer.services.catalogue.model.product.options.ProductOptionValue;
-import net.minidev.json.annotate.JsonIgnore;
-
 @Entity
 @Table(name = "PRODUCT_ATTRIBUTE", uniqueConstraints = {
 		@UniqueConstraint(columnNames = { "OPTION_ID", "OPTION_VALUE_ID", "PRODUCT_ID" }) })
+@Deprecated
 public class ProductAttribute extends Auditable<String> implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -61,7 +60,7 @@ public class ProductAttribute extends Auditable<String> implements Serializable 
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "OPTION_ID", nullable = false)
-	private ProductOption productOption;
+	private ProductOptionDescriptor productOption;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "OPTION_VALUE_ID", nullable = false)
@@ -96,7 +95,6 @@ public class ProductAttribute extends Auditable<String> implements Serializable 
 		this.attributePrice = attributePrice;
 	}
 
-	@JsonIgnore
 	@ManyToOne(targetEntity = Product.class)
 	@JoinColumn(name = "PRODUCT_ID", nullable = false)
 	private Product product;
@@ -168,11 +166,11 @@ public class ProductAttribute extends Auditable<String> implements Serializable 
 		this.attributeDiscounted = attributeDiscounted;
 	}
 
-	public ProductOption getProductOption() {
+	public ProductOptionDescriptor getProductOption() {
 		return productOption;
 	}
 
-	public void setProductOption(ProductOption productOption) {
+	public void setProductOption(ProductOptionDescriptor productOption) {
 		this.productOption = productOption;
 	}
 

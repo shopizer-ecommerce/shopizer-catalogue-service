@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,11 +31,13 @@ import com.shopizer.db.audit.Auditable;
 import com.shopizer.services.catalogue.model.category.Category;
 import com.shopizer.services.catalogue.model.product.manufacturer.Manufacturer;
 import com.shopizer.services.catalogue.model.product.type.ProductType;
+import com.shopizer.services.catalogue.model.product.variants.ProductDimensions;
 
 
 @Entity
 @Table(name = "PRODUCT",
     uniqueConstraints = @UniqueConstraint(columnNames = {"MERCHANT_CODE", "SKU"}))
+@Deprecated
 public class Product extends Auditable<String> implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -47,6 +50,9 @@ public class Product extends Auditable<String> implements Serializable {
 
   @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product")
   private Set<ProductDescription> descriptions = new HashSet<ProductDescription>();
+  
+  @Embedded
+  private ProductDimensions dimensions;
 
 
   /*
@@ -64,6 +70,14 @@ public class Product extends Auditable<String> implements Serializable {
    * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product") private
    * Set<ProductRelationship> relationships = new HashSet<ProductRelationship>();
    */
+
+  public ProductDimensions getDimensions() {
+    return dimensions;
+  }
+
+  public void setDimensions(ProductDimensions dimensions) {
+    this.dimensions = dimensions;
+  }
 
   @NotNull
   @Column(name = "MERCHANT_CODE", nullable = false)

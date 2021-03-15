@@ -17,7 +17,7 @@ import com.shopizer.db.description.Description;
 @Table(name = "PRODUCT_OPTION_DESC", uniqueConstraints = {
 		@UniqueConstraint(columnNames = { "PRODUCT_OPTION_ID", "LANGUAGE_ID" }) })
 @TableGenerator(name = "description_gen", table = "SM_SEQUENCER", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_COUNT", pkColumnValue = "product_option_description_seq", allocationSize = com.shopizer.db.SchemaConstants.DESCRIPTION_ID_ALLOCATION_SIZE, initialValue = com.shopizer.db.SchemaConstants.DESCRIPTION_ID_START_VALUE)
-public class ProductOptionDescription extends Description {
+public class ProductOptionDescriptorDescription extends Description {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,15 +25,15 @@ public class ProductOptionDescription extends Description {
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "product_option_value_description_gen")
 	private Long id;
 
-	@ManyToOne(targetEntity = ProductOption.class)
+	@ManyToOne(targetEntity = ProductOptionDescriptor.class)
 	@JoinColumn(name = "PRODUCT_OPTION_ID", nullable = false)
-	private ProductOption productOption;
+	private ProductOptionDescriptor productOption;
 
 	@Column(name = "PRODUCT_OPTION_COMMENT")
 	@Type(type = "org.hibernate.type.TextType")
 	private String productOptionComment;
 
-	public ProductOptionDescription() {
+	public ProductOptionDescriptorDescription() {
 	}
 
 	public String getProductOptionComment() {
@@ -44,11 +44,11 @@ public class ProductOptionDescription extends Description {
 		this.productOptionComment = productOptionComment;
 	}
 
-	public ProductOption getProductOption() {
+	public ProductOptionDescriptor getProductOption() {
 		return productOption;
 	}
 
-	public void setProductOption(ProductOption productOption) {
+	public void setProductOption(ProductOptionDescriptor productOption) {
 		this.productOption = productOption;
 	}
 }

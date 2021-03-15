@@ -12,7 +12,6 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.UniqueConstraint;
 import com.shopizer.db.description.Description;
-import net.minidev.json.annotate.JsonIgnore;
 
 
 @Entity
@@ -33,7 +32,6 @@ public class CategoryDescription extends Description {
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "category_description_gen")
 	private Long id;
 	
-	@JsonIgnore
 	@ManyToOne(targetEntity = Category.class)
 	@JoinColumn(name = "CATEGORY_ID", nullable = false)
 	private Category category;
