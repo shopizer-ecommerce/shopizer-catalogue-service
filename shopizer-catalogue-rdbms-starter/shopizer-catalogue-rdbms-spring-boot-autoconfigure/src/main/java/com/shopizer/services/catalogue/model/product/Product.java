@@ -50,9 +50,7 @@ public class Product extends Auditable<String> implements Serializable {
 
   @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product")
   private Set<ProductDescription> descriptions = new HashSet<ProductDescription>();
-  
-  @Embedded
-  private ProductDimensions dimensions;
+
 
 
   /*
@@ -70,14 +68,6 @@ public class Product extends Auditable<String> implements Serializable {
    * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product") private
    * Set<ProductRelationship> relationships = new HashSet<ProductRelationship>();
    */
-
-  public ProductDimensions getDimensions() {
-    return dimensions;
-  }
-
-  public void setDimensions(ProductDimensions dimensions) {
-    this.dimensions = dimensions;
-  }
 
   @NotNull
   @Column(name = "MERCHANT_CODE", nullable = false)
