@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import com.shopizer.services.catalogue.model.product.Product;
 import com.shopizer.services.catalogue.model.product.options.ProductOption;
 
@@ -16,8 +18,7 @@ import com.shopizer.services.catalogue.model.product.options.ProductOption;
 @Table(name = "PRODUCT_VARIANT", uniqueConstraints = {
         @UniqueConstraint(columnNames = { "VARIANT_ID", "PRODUCT_ID" }) })
 public class ProductVariant {
-  
-  private String sku;
+
   
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name="PRODUCT_ID", nullable=false)
@@ -29,6 +30,17 @@ public class ProductVariant {
   @ManyToOne(targetEntity = ProductOption.class)
   @JoinColumn(name = "PRODUCT_OPTION_ID", nullable = false)
   private Set<ProductOption> options;
+
+  @NotEmpty
+  @Pattern(regexp = "^[a-zA-Z0-9_]*$")
+  @Column(name = "SKU")
+  private String sku;
+
+  /**
+   * External system reference SKU/ID
+   */
+  @Column(name = "REF_SKU")
+  private String refSku;
   
   
   @Embedded

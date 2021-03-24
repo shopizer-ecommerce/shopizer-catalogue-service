@@ -2,12 +2,10 @@ package com.shopizer.services.catalogue.model.product;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,18 +18,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import org.hibernate.annotations.Cascade;
 import com.shopizer.db.audit.Auditable;
 import com.shopizer.services.catalogue.model.category.Category;
 import com.shopizer.services.catalogue.model.product.manufacturer.Manufacturer;
 import com.shopizer.services.catalogue.model.product.type.ProductType;
-import com.shopizer.services.catalogue.model.product.variants.ProductDimensions;
 
 
 @Entity
@@ -84,17 +77,7 @@ public class Product extends Auditable<String> implements Serializable {
   })
   private Set<Category> categories = new HashSet<Category>();
 
-  @Column(name = "DATE_AVAILABLE")
-  @Temporal(TemporalType.TIMESTAMP)
-  private Date dateAvailable = new Date();
 
-
-  @Column(name = "AVAILABLE", columnDefinition = "boolean default true", nullable = false)
-  private Boolean available = true;
-
-
-  @Column(name = "PREORDER", columnDefinition = "boolean default false", nullable = false)
-  private Boolean preOrder = false;
 
   @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.REFRESH})
   @JoinColumn(name = "MANUFACTURER_ID", nullable = true)
@@ -114,24 +97,8 @@ public class Product extends Auditable<String> implements Serializable {
   @Column(name = "PRODUCT_VIRTUAL", columnDefinition = "boolean default false", nullable = false)
   private boolean productVirtual = false;
 
-  @Column(name = "PRODUCT_SHIP", columnDefinition = "boolean default false", nullable = false)
-  private Boolean productShipeable = false;
-
-
   @Column(name = "PRODUCT_FREE", columnDefinition = "boolean default false", nullable = false)
   private boolean productIsFree;
-
-  @Column(name = "PRODUCT_LENGTH")
-  private BigDecimal productLength;
-
-  @Column(name = "PRODUCT_WIDTH")
-  private BigDecimal productWidth;
-
-  @Column(name = "PRODUCT_HEIGHT")
-  private BigDecimal productHeight;
-
-  @Column(name = "PRODUCT_WEIGHT")
-  private BigDecimal productWeight;
 
   @Column(name = "REVIEW_AVG")
   private BigDecimal productReviewAvg;
@@ -145,16 +112,7 @@ public class Product extends Auditable<String> implements Serializable {
   @Column(name = "SORT_ORDER")
   private int sortOrder = 0;
 
-  @NotEmpty
-  @Pattern(regexp = "^[a-zA-Z0-9_]*$")
-  @Column(name = "SKU")
-  private String sku;
 
-  /**
-   * External system reference SKU/ID
-   */
-  @Column(name = "REF_SKU")
-  private String refSku;
 
   public Product() {}
 
@@ -168,38 +126,6 @@ public class Product extends Auditable<String> implements Serializable {
 
   public boolean isProductVirtual() {
     return productVirtual;
-  }
-
-  public BigDecimal getProductLength() {
-    return productLength;
-  }
-
-  public void setProductLength(BigDecimal productLength) {
-    this.productLength = productLength;
-  }
-
-  public BigDecimal getProductWidth() {
-    return productWidth;
-  }
-
-  public void setProductWidth(BigDecimal productWidth) {
-    this.productWidth = productWidth;
-  }
-
-  public BigDecimal getProductHeight() {
-    return productHeight;
-  }
-
-  public void setProductHeight(BigDecimal productHeight) {
-    this.productHeight = productHeight;
-  }
-
-  public BigDecimal getProductWeight() {
-    return productWeight;
-  }
-
-  public void setProductWeight(BigDecimal productWeight) {
-    this.productWeight = productWeight;
   }
 
   public BigDecimal getProductReviewAvg() {
@@ -224,14 +150,6 @@ public class Product extends Auditable<String> implements Serializable {
 
   public void setProductOrdered(Integer productOrdered) {
     this.productOrdered = productOrdered;
-  }
-
-  public String getSku() {
-    return sku;
-  }
-
-  public void setSku(String sku) {
-    this.sku = sku;
   }
 
   public Set<ProductDescription> getDescriptions() {
@@ -315,13 +233,6 @@ public class Product extends Auditable<String> implements Serializable {
     this.categories = categories;
   }
 
-  public Date getDateAvailable() {
-    return dateAvailable;
-  }
-
-  public void setDateAvailable(Date dateAvailable) {
-    this.dateAvailable = dateAvailable;
-  }
 
   public void setSortOrder(int sortOrder) {
     this.sortOrder = sortOrder;
@@ -329,38 +240,6 @@ public class Product extends Auditable<String> implements Serializable {
 
   public int getSortOrder() {
     return sortOrder;
-  }
-
-  public void setAvailable(Boolean available) {
-    this.available = available;
-  }
-
-  public boolean isAvailable() {
-    return available != null ? available.booleanValue() : false;
-  }
-
-  public boolean isProductShipeable() {
-    return productShipeable != null ? productShipeable.booleanValue() : false;
-  }
-
-  public void setProductShipeable(Boolean productShipeable) {
-    this.productShipeable = productShipeable;
-  }
-
-  public boolean isPreOrder() {
-    return preOrder;
-  }
-
-  public void setPreOrder(boolean preOrder) {
-    this.preOrder = preOrder;
-  }
-
-  public String getRefSku() {
-    return refSku;
-  }
-
-  public void setRefSku(String refSku) {
-    this.refSku = refSku;
   }
 
   public String getMerchantStore() {
@@ -371,21 +250,7 @@ public class Product extends Auditable<String> implements Serializable {
     this.merchantStore = merchantStore;
   }
 
-  public Boolean getPreOrder() {
-    return preOrder;
-  }
 
-  public void setPreOrder(Boolean preOrder) {
-    this.preOrder = preOrder;
-  }
-
-  public Boolean getAvailable() {
-    return available;
-  }
-
-  public Boolean getProductShipeable() {
-    return productShipeable;
-  }
 
 
 

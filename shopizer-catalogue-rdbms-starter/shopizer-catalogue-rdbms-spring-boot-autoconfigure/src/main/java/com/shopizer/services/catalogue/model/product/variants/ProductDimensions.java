@@ -20,4 +20,28 @@ public class ProductDimensions {
   @Column(name = "WEIGHT")
   private BigDecimal weight;
 
+  public BigDecimal getLength() {
+    return length;
+  }
+
+  public void setLength(BigDecimal length) {
+    this.length = length;
+  }
+
+  public BigDecimal getWidth() {
+    return width;
+  }
+
+  public void setWidth(BigDecimal width) {
+    this.width = width;
+  }
+
+  public BigDecimal getWeight() {
+    return weight;
+  }
+
+  public void setWeight(BigDecimal weight) {
+    this.weight = weight;
+  }
+
 }
