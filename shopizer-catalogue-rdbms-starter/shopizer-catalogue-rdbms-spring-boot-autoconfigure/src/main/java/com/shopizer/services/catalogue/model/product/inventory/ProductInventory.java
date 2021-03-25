@@ -45,6 +45,9 @@ public class ProductInventory {
   
   @Column(name = "PRODUCT_SHIP", columnDefinition = "boolean default false", nullable = false)
   private Boolean productShipeable = false;
+  
+  //@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.REFRESH})
+  //@JoinColumn(name="TAX_CLASS_ID", nullable=true) private TaxClass taxClass;
 
 
 }

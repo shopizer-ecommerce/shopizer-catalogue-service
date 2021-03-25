@@ -47,12 +47,6 @@ public class Product extends Auditable<String> implements Serializable {
 
 
   /*
-   * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="product") private
-   * Set<ProductAvailability> availabilities = new HashSet<ProductAvailability>();
-   * 
-   * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product") private
-   * Set<ProductAttribute> attributes = new HashSet<ProductAttribute>();
-   * 
    * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product")//cascade
    * is set to remove because product save requires logic to create physical image first and then
    * save the image id in the database, cannot be done in cascade private Set<ProductImage> images =
@@ -88,12 +82,6 @@ public class Product extends Auditable<String> implements Serializable {
   @JoinColumn(name = "PRODUCT_TYPE_ID", nullable = true)
   private ProductType type;
 
-  /**
-   * @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.REFRESH})
-   * 
-   * @JoinColumn(name="TAX_CLASS_ID", nullable=true) private TaxClass taxClass;
-   */
-
   @Column(name = "PRODUCT_VIRTUAL", columnDefinition = "boolean default false", nullable = false)
   private boolean productVirtual = false;
 
@@ -111,8 +99,6 @@ public class Product extends Auditable<String> implements Serializable {
 
   @Column(name = "SORT_ORDER")
   private int sortOrder = 0;
-
-
 
   public Product() {}
 
@@ -176,15 +162,6 @@ public class Product extends Auditable<String> implements Serializable {
     this.productIsFree = productIsFree;
   }
 
-
-
-  /*
-   * public Set<ProductAttribute> getAttributes() { return attributes; }
-   * 
-   * public void setAttributes(Set<ProductAttribute> attributes) { this.attributes = attributes; }
-   */
-
-
   public Manufacturer getManufacturer() {
     return manufacturer;
   }
@@ -201,17 +178,10 @@ public class Product extends Auditable<String> implements Serializable {
     this.type = type;
   }
   /*
-   * 
-   * 
    * public Set<ProductAvailability> getAvailabilities() { return availabilities; }
    * 
    * public void setAvailabilities(Set<ProductAvailability> availabilities) { this.availabilities =
    * availabilities; }
-   * 
-   * public TaxClass getTaxClass() { return taxClass; }
-   * 
-   * public void setTaxClass(TaxClass taxClass) { this.taxClass = taxClass; }
-   * 
    * public Set<ProductImage> getImages() { return images; }
    * 
    * public void setImages(Set<ProductImage> images) { this.images = images; }
