@@ -13,40 +13,43 @@ import javax.persistence.UniqueConstraint;
 import com.shopizer.db.description.Description;
 
 @Entity
-@Table(name = "PRODUCT_TYPE_DESCRIPTION", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "PRODUCT_TYPE_ID", "LANGUAGE_ID" }) })
+@Table(name = "PRODUCT_TYPE_DESCRIPTION",
+    uniqueConstraints = {@UniqueConstraint(columnNames = {"PRODUCT_TYPE_ID", "LANGUAGE_ID"})})
 
-@TableGenerator(name = "description_gen", table = "SM_SEQUENCER", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_COUNT", pkColumnValue = "product_type_description_seq", allocationSize = com.shopizer.db.SchemaConstants.DESCRIPTION_ID_ALLOCATION_SIZE, initialValue = com.shopizer.db.SchemaConstants.DESCRIPTION_ID_START_VALUE)
+@TableGenerator(name = "description_gen", table = "SM_SEQUENCER", pkColumnName = "SEQ_NAME",
+    valueColumnName = "SEQ_COUNT", pkColumnValue = "product_type_description_seq",
+    allocationSize = com.shopizer.db.SchemaConstants.DESCRIPTION_ID_ALLOCATION_SIZE,
+    initialValue = com.shopizer.db.SchemaConstants.DESCRIPTION_ID_START_VALUE)
 public class ProductTypeDescription extends Description {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "PRODUCT_TYPE_DESCRIPTION_ID")
-	@GeneratedValue(strategy = GenerationType.TABLE, generator = "product_type_description_gen")
-	private Long id;
+  @Id
+  @Column(name = "PRODUCT_TYPE_DESCRIPTION_ID")
+  @GeneratedValue(strategy = GenerationType.TABLE, generator = "product_type_description_gen")
+  private Long id;
 
-	@ManyToOne(targetEntity = ProductType.class)
-	@JoinColumn(name = "PRODUCT_TYPE_ID", nullable = false)
-	private ProductType productType;
+  @ManyToOne(targetEntity = ProductType.class)
+  @JoinColumn(name = "PRODUCT_TYPE_ID", nullable = false)
+  private ProductType productType;
 
-	public ProductType getProductType() {
-		return productType;
-	}
+  public ProductType getProductType() {
+    return productType;
+  }
 
-	public void setProductType(ProductType productType) {
-		this.productType = productType;
-	}
+  public void setProductType(ProductType productType) {
+    this.productType = productType;
+  }
 
-	public Long getId() {
-		return id;
-	}
+  public Long getId() {
+    return id;
+  }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+  public void setId(Long id) {
+    this.id = id;
+  }
 
 }

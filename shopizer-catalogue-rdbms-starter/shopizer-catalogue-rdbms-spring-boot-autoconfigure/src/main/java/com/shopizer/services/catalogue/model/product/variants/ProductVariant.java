@@ -1,16 +1,21 @@
 package com.shopizer.services.catalogue.model.product.variants;
 
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import com.shopizer.services.catalogue.model.product.Product;
+import com.shopizer.services.catalogue.model.product.images.ProductImage;
 import com.shopizer.services.catalogue.model.product.options.ProductOption;
 
 @Entity
@@ -29,6 +34,9 @@ public class ProductVariant {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "PRODUCT_OPTION_ID", nullable = true)
   private ProductOption option;
+  
+  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product_variant")
+  private Set<ProductImage> images = new HashSet<ProductImage>();
 
 
   @NotEmpty

@@ -47,10 +47,6 @@ public class Product extends Auditable<String> implements Serializable {
 
 
   /*
-   * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "product")//cascade
-   * is set to remove because product save requires logic to create physical image first and then
-   * save the image id in the database, cannot be done in cascade private Set<ProductImage> images =
-   * new HashSet<ProductImage>();
    * 
    * @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product") private
    * Set<ProductRelationship> relationships = new HashSet<ProductRelationship>();
@@ -174,11 +170,6 @@ public class Product extends Auditable<String> implements Serializable {
   public void setType(ProductType type) {
     this.type = type;
   }
-  /* 
-   * public Set<ProductImage> getImages() { return images; }
-   * 
-   * public void setImages(Set<ProductImage> images) { this.images = images; }
-   */
 
   /*
    * public Set<ProductRelationship> getRelationships() { return relationships; }

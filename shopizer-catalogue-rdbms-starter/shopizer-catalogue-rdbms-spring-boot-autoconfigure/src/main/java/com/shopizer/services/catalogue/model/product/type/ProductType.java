@@ -37,7 +37,10 @@ public class ProductType extends Auditable<String> implements Serializable {
   private String code;
 
   @Column(name = "PRD_TYPE_ADD_TO_CART")
-  private Boolean allowAddToCart;
+  private boolean allowAddToCart;
+  
+  @Column(name = "PRD_TYPE_VISIBLE")
+  private boolean visible;
 
   @NotNull
   @Column(name = "MERCHANT_CODE", nullable = true)
@@ -69,12 +72,29 @@ public class ProductType extends Auditable<String> implements Serializable {
     this.code = code;
   }
 
-  public Boolean getAllowAddToCart() {
-    return allowAddToCart;
+  public Set<ProductTypeDescription> getDescriptions() {
+    return descriptions;
   }
 
-  public void setAllowAddToCart(Boolean allowAddToCart) {
-    this.allowAddToCart = allowAddToCart;
+  public void setDescriptions(Set<ProductTypeDescription> descriptions) {
+    this.descriptions = descriptions;
   }
+
+  public boolean isVisible() {
+    return visible;
+  }
+
+  public void setVisible(boolean visible) {
+    this.visible = visible;
+  }
+
+  public String getMerchantStore() {
+    return merchantStore;
+  }
+
+  public void setMerchantStore(String merchantStore) {
+    this.merchantStore = merchantStore;
+  }
+
 
 }
