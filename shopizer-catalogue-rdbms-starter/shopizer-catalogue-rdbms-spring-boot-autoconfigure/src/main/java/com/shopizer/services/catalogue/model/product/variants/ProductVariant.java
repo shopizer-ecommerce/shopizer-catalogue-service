@@ -1,6 +1,5 @@
 package com.shopizer.services.catalogue.model.product.variants;
 
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -27,9 +26,10 @@ public class ProductVariant {
   @Column(name = "DEFAULT")
   private boolean defaultVariant;
   
-  @ManyToOne(targetEntity = ProductOption.class)
-  @JoinColumn(name = "PRODUCT_OPTION_ID", nullable = false)
-  private Set<ProductOption> options;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "PRODUCT_OPTION_ID", nullable = true)
+  private ProductOption option;
+
 
   @NotEmpty
   @Pattern(regexp = "^[a-zA-Z0-9_]*$")
@@ -41,6 +41,9 @@ public class ProductVariant {
    */
   @Column(name = "REF_SKU")
   private String refSku;
+  
+  @Column(name = "SORT_ORDER")
+  private int sortOrder;;
   
   
   @Embedded
@@ -77,16 +80,6 @@ public class ProductVariant {
   }
 
 
-  public Set<ProductOption> getOptions() {
-    return options;
-  }
-
-
-  public void setOptions(Set<ProductOption> options) {
-    this.options = options;
-  }
-
-
   public ProductDimensions getDimensions() {
     return dimensions;
   }
@@ -94,6 +87,36 @@ public class ProductVariant {
 
   public void setDimensions(ProductDimensions dimensions) {
     this.dimensions = dimensions;
+  }
+
+
+  public ProductOption getOption() {
+    return option;
+  }
+
+
+  public void setOption(ProductOption option) {
+    this.option = option;
+  }
+
+
+  public String getRefSku() {
+    return refSku;
+  }
+
+
+  public void setRefSku(String refSku) {
+    this.refSku = refSku;
+  }
+
+
+  public int getSortOrder() {
+    return sortOrder;
+  }
+
+
+  public void setSortOrder(int sortOrder) {
+    this.sortOrder = sortOrder;
   }
 
 }

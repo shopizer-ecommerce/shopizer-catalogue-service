@@ -97,9 +97,6 @@ public class Product extends Auditable<String> implements Serializable {
   @Column(name = "QUANTITY_ORDERED")
   private Integer productOrdered;
 
-  @Column(name = "SORT_ORDER")
-  private int sortOrder = 0;
-
   public Product() {}
 
   public Long getId() {
@@ -177,11 +174,7 @@ public class Product extends Auditable<String> implements Serializable {
   public void setType(ProductType type) {
     this.type = type;
   }
-  /*
-   * public Set<ProductAvailability> getAvailabilities() { return availabilities; }
-   * 
-   * public void setAvailabilities(Set<ProductAvailability> availabilities) { this.availabilities =
-   * availabilities; }
+  /* 
    * public Set<ProductImage> getImages() { return images; }
    * 
    * public void setImages(Set<ProductImage> images) { this.images = images; }
@@ -201,15 +194,6 @@ public class Product extends Auditable<String> implements Serializable {
 
   public void setCategories(Set<Category> categories) {
     this.categories = categories;
-  }
-
-
-  public void setSortOrder(int sortOrder) {
-    this.sortOrder = sortOrder;
-  }
-
-  public int getSortOrder() {
-    return sortOrder;
   }
 
   public String getMerchantStore() {
