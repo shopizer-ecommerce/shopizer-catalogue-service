@@ -1,4 +1,4 @@
-package com.shopizer.services.catalogue.model.product.images;
+package com.shopizer.services.catalogue.model.product.image;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import com.shopizer.db.audit.Auditable;
-import com.shopizer.services.catalogue.model.product.variants.ProductVariant;
+import com.shopizer.services.catalogue.model.product.variant.ProductVariant;
 
 @Entity
 @Table(name = "PRODUCT_IMAGE")

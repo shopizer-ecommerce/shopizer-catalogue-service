@@ -14,7 +14,7 @@ import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
-import com.shopizer.services.catalogue.model.product.variants.ProductVariant;
+import com.shopizer.services.catalogue.model.product.variant.ProductVariant;
 
 @Entity
 @Table(name = "PRODUCT_INVENTORY", uniqueConstraints = {

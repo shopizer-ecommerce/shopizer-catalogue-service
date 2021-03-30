@@ -1,4 +1,4 @@
-package com.shopizer.services.catalogue.model.product.options;
+package com.shopizer.services.catalogue.model.product.option;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

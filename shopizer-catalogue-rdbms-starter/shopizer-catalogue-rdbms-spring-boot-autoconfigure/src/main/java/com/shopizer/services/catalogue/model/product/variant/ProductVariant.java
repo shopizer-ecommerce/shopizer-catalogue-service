@@ -1,5 +1,6 @@
-package com.shopizer.services.catalogue.model.product.variants;
+package com.shopizer.services.catalogue.model.product.variant;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -14,14 +15,15 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import com.shopizer.db.audit.Auditable;
 import com.shopizer.services.catalogue.model.product.Product;
-import com.shopizer.services.catalogue.model.product.images.ProductImage;
-import com.shopizer.services.catalogue.model.product.options.ProductOption;
+import com.shopizer.services.catalogue.model.product.image.ProductImage;
+import com.shopizer.services.catalogue.model.product.option.ProductOption;
 
 @Entity
 @Table(name = "PRODUCT_VARIANT", uniqueConstraints = {
         @UniqueConstraint(columnNames = { "VARIANT_ID", "PRODUCT_ID" }) })
-public class ProductVariant {
+public class ProductVariant extends Auditable<String> implements Serializable {
 
   
   @ManyToOne(fetch = FetchType.LAZY)

@@ -1,4 +1,4 @@
-package com.shopizer.services.catalogue.model.product.images;
+package com.shopizer.services.catalogue.model.product.image;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

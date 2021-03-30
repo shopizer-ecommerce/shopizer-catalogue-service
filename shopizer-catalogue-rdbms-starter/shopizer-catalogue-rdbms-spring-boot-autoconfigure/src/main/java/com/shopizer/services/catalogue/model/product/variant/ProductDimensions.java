@@ -1,4 +1,4 @@
-package com.shopizer.services.catalogue.model.product.variants;
+package com.shopizer.services.catalogue.model.product.variant;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;
