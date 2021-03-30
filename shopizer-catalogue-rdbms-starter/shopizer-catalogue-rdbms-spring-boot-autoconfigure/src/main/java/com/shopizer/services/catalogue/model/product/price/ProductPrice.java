@@ -14,12 +14,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import com.shopizer.db.audit.Auditable;
+import com.shopizer.services.catalogue.model.product.variant.ProductVariant;
 
 @Entity
 @Table(name = "PRODUCT_PRICE")
@@ -66,14 +69,13 @@ public class ProductPrice extends Auditable<String> implements Serializable {
 
 	@Column(name = "PRODUCT_PRICE_SPECIAL_AMOUNT")
 	private BigDecimal productPriceSpecialAmount;
-
-	/**
-	@ManyToOne(targetEntity = ProductAvailability.class)
-	@JoinColumn(name = "PRODUCT_AVAIL_ID", nullable = false)
-	private ProductAvailability productAvailability;
-	**/
 	
+	  
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="VARIANT_ID", nullable=false)
+	private ProductVariant productVariant;
 
+	
 	public ProductPrice() {
 	}
 	
