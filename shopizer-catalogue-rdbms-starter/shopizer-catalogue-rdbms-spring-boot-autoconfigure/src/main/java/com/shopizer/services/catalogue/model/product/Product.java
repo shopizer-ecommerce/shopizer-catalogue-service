@@ -30,7 +30,6 @@ import com.shopizer.services.catalogue.model.product.type.ProductType;
 @Entity
 @Table(name = "PRODUCT",
     uniqueConstraints = @UniqueConstraint(columnNames = {"MERCHANT_CODE", "SKU"}))
-@Deprecated
 public class Product extends Auditable<String> implements Serializable {
   private static final long serialVersionUID = 1L;
 
