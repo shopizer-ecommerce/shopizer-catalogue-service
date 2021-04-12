@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/shopizer-catalogue-service/catalogue.iml" filepath="$PROJECT_DIR$/shopizer-catalogue-service/catalogue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopizer-catalogue-pricing-service/pricing.iml" filepath="$PROJECT_DIR$/shopizer-catalogue-pricing-service/pricing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopizer-catalogue-rdbms-starter/shopizer-catalogue-rdbms-spring-boot-starter/shopizer-catalogue-rdbms-spring-boot-starter.iml" filepath="$PROJECT_DIR$/shopizer-catalogue-rdbms-starter/shopizer-catalogue-rdbms-spring-boot-starter/shopizer-catalogue-rdbms-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopizer-catalogue-rdbms-starter/shopizer-catalogue-rdbms-starter.iml" filepath="$PROJECT_DIR$/shopizer-catalogue-rdbms-starter/shopizer-catalogue-rdbms-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopizer-catalogue-rdbms-starter/shopizer-catalogue-rdbms-spring-boot-autoconfigure/shopizer-catalogue-rdbms-starter-autoconfigure.iml" filepath="$PROJECT_DIR$/shopizer-catalogue-rdbms-starter/shopizer-catalogue-rdbms-spring-boot-autoconfigure/shopizer-catalogue-rdbms-starter-autoconfigure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/shopizer-catalogue-service.iml" filepath="$PROJECT_DIR$/.idea/shopizer-catalogue-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopizer-common/shopizer-common.iml" filepath="$PROJECT_DIR$/shopizer-common/shopizer-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopizer-eureka-service/shopizer-eureka-service.iml" filepath="$PROJECT_DIR$/shopizer-eureka-service/shopizer-eureka-service.iml" />
+    </modules>
+  </component>
+</project>
